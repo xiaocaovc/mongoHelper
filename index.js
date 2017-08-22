@@ -1,7 +1,7 @@
 const mongoClient = require('mongodb').MongoClient;
 var ObjectID = require('mongodb').ObjectID;
 const _ = require('lodash');
-const defaulfOptions = {
+const defaultOptions = {
 	host: 'localhost',
 	port: 27017,
 	db: 'test',
@@ -12,7 +12,7 @@ const defaulfOptions = {
 var CRUD =   function(options){
 	this.connect = null;
 	var that = this;
-	options = _.assign({}, defaulfOptions, options);
+	options = _.assign({}, defaultOptions, options);
 	let mongoUrl = options.uri || options.url;
 	if (!mongoUrl) {
 		if (options.user && options.pass) {

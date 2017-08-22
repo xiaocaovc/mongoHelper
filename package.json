@@ -1,7 +1,7 @@
 {
-  "name": "mongo-helper",
+  "name": "mongodb-helper",
   "version": "0.1.0",
-  "description": "mongo helper",
+  "description": "mongodb helper",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
