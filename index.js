@@ -16,9 +16,9 @@ var CRUD =   function(options){
 	var mongoUrl = options.uri || options.url;
 	if (!mongoUrl) {
 		if (options.user && options.pass) {
-			mongoUrl = 'mongodb://${options.user}:${options.pass}@${options.host}:${options.port}/${options.db}';
+			mongoUrl = `mongodb://${options.user}:${options.pass}@${options.host}:${options.port}/${options.db}`;
 		} else {
-			mongoUrl = 'mongodb://${options.host}:${options.port}/${options.db}';
+			mongoUrl = `mongodb://${options.host}:${options.port}/${options.db}`;
 		}
 	}
 	mongoClient.connect(mongoUrl,{
