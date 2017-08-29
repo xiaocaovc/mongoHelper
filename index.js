@@ -12,13 +12,13 @@ const defaultOptions = {
 var CRUD =   function(options){
 	this.connect = null;
 	var that = this;
-	options = _.assign({}, defaultOptions, options);
-	let mongoUrl = options.uri || options.url;
+	options = _.merge({}, defaultOptions, options);
+	var mongoUrl = options.uri || options.url;
 	if (!mongoUrl) {
 		if (options.user && options.pass) {
-			mongoUrl = `mongodb://${options.user}:${options.pass}@${options.host}:${options.port}/${options.db}`;
+			mongoUrl = 'mongodb://${options.user}:${options.pass}@${options.host}:${options.port}/${options.db}';
 		} else {
-			mongoUrl = `mongodb://${options.host}:${options.port}/${options.db}`;
+			mongoUrl = 'mongodb://${options.host}:${options.port}/${options.db}';
 		}
 	}
 	mongoClient.connect(mongoUrl,{
